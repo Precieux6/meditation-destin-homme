@@ -37,7 +37,7 @@ async function sendMessage() {
 
     try {
         // 3. Appel à ton API backend (Remplace l'URL par la tienne si hébergée ailleurs)
-        const response = await fetch('https://TON-API-RENDER.onrender.com/api/chat', {
+        const response = await fetch('https://meditation-destin-homme.vercel.app/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
