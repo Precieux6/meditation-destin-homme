@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méditation sur la vie de l'homme et son langage - Valère Tossou</title>
+    <meta name="description" content="Essai philosophique sur la vie humaine, le langage et le destin par Folly Valère Tossou">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F5F3EF;
+            --black: #1A1A1A;
+            --gold: #C9A961;
+            --taupe: #8B8680;
+            --light-gray: #D4D0CA;
+            --dark-bg: #0F0E0C;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            background: linear-gradient(135deg, #0F0E0C 0%, #1A1816 100%);
+            color: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* HEADER NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(15, 14, 12, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* URGENCE BADGE - STICKY EN TOP */
+        .urgence-badge {
+            position: fixed;
+            top: 70px;
+            right: 2rem;
+            background: rgba(201, 169, 97, 0.15);
+            border: 1px solid var(--gold);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--gold);
+            animation: slideInRight 0.6s ease-out;
+            z-index: 999;
+        }
+
+        .urgence-badge span {
+            font-weight: 600;
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 3rem;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(201, 169, 97, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-subtitle {
+            color: var(--gold);
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            grid-column: 1 / -1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+            letter-spacing: -1px;
+            grid-column: 1 / -1;
+        }
+
+        .hero-text {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: var(--light-gray);
+            text-align: justify;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            grid-column: 1 / 2;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(201, 169, 97, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(201, 169, 97, 0.35);
+            background: #D4B66A;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            font-weight: 600;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(201, 169, 97, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* HERO IMAGE */
+        .hero-book {
+            perspective: 1000px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .book-cover {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(201, 169, 97, 0.4);
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-book:hover .book-cover {
+            transform: rotateY(15deg);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            padding: 5rem 3rem;
+            background: rgba(26, 26, 26, 0.5);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--cream);
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(201, 169, 97, 0.05);
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .feature-card:hover {
+            border-color: var(--gold);
+            background: rgba(201, 169, 97, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--gold);
+        }
+
+        .feature-card p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials {
+            padding: 5rem 3rem;
+            background: linear-gradient(135deg, rgba(15, 14, 12, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(201, 169, 97, 0.08);
+            border-left: 4px solid var(--gold);
+            padding: 2rem;
+            border-radius: 4px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .testimonial-stars {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: var(--light-gray);
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* WHAT YOU GET SECTION */
+        .what-you-get {
+            padding: 5rem 3rem;
+            background: rgba(26, 26, 26, 0.5);
+        }
+
+        .what-you-get-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .what-you-get-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(201, 169, 97, 0.05);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(201, 169, 97, 0.12);
+            transform: translateX(5px);
+        }
+
+        .benefit-checkmark {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+            min-width: 30px;
+        }
+
+        .benefit-text h4 {
+            color: var(--cream);
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .benefit-text p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            padding: 5rem 3rem;
+            background: linear-gradient(135deg, rgba(15, 14, 12, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 1rem;
+            background: rgba(201, 169, 97, 0.05);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: rgba(201, 169, 97, 0.1);
+        }
+
+        .faq-question.active {
+            background: rgba(201, 169, 97, 0.15);
+            border-radius: 4px 4px 0 0;
+        }
+
+        .faq-question-text {
+            font-size: 1.05rem;
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        .faq-toggle {
+            color: var(--gold);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1rem;
+            background: rgba(201, 169, 97, 0.03);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .faq-answer.show {
+            max-height: 500px;
+            padding: 1rem;
+        }
+
+        .faq-answer-text {
+            color: var(--light-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* PREVIEW SECTION */
+        .preview {
+            padding: 5rem 3rem;
+            background: rgba(26, 26, 26, 0.5);
+        }
+
+        .preview-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .preview-intro {
+            color: var(--light-gray);
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pdf-viewer {
+            background: rgba(201, 169, 97, 0.05);
+            border: 1px solid rgba(201, 169, 97, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 5rem 3rem;
+            background: linear-gradient(135deg, rgba(15, 14, 12, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .about-text p {
+            color: var(--light-gray);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-quote {
+            background: rgba(201, 169, 97, 0.1);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--gold);
+            border-radius: 2px;
+        }
+
+        .about-image {
+            font-size: 8rem;
+            text-align: center;
+        }
+
+        /* AUTHOR SECTION */
+        .author {
+            padding: 4rem 3rem;
+            background: rgba(26, 26, 26, 0.5);
+            text-align: center;
+        }
+
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--gold);
+            object-fit: cover;
+            background: rgba(201, 169, 97, 0.2);
+        }
+
+        .author h3 {
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin-bottom: 0.8rem;
+        }
+
+        .author p {
+            color: var(--light-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* PRICING SECTION */
+        .pricing {
+            padding: 5rem 3rem;
+            background: linear-gradient(135deg, rgba(15, 14, 12, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+        }
+
+        .pricing-card {
+            max-width: 500px;
+            margin: 3rem auto 0;
+            background: rgba(201, 169, 97, 0.05);
+            border: 2px solid var(--gold);
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            background: rgba(201, 169, 97, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(201, 169, 97, 0.2);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .price {
+            font-size: 3rem;
+            color: var(--gold);
+            margin: 1rem 0;
+            font-weight: 700;
+        }
+
+        .price-currency {
+            font-size: 1.5rem;
+            margin-right: 0.3rem;
+        }
+
+        .price-period {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.7rem 0;
+            color: var(--light-gray);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* FINAL CTA SECTION */
+        .cta-final {
+            padding: 4rem 3rem;
+            background: rgba(26, 26, 26, 0.5);
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--cream);
+        }
+
+        .cta-final p {
+            color: var(--light-gray);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* STICKY CTA BUTTON (Mobile) */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--gold);
+            color: var(--black);
+            padding: 1rem;
+            text-align: center;
+            z-index: 998;
+            box-shadow: 0 -5px 20px rgba(201, 169, 97, 0.3);
+        }
+
+        .sticky-cta button {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 0.95rem;
+            background: var(--black);
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-cta button:active {
+            transform: scale(0.98);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 3rem;
+            background: rgba(15, 14, 12, 0.95);
+            text-align: center;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--cream);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            nav {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                padding-top: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-book {
+                order: -1;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .urgence-badge {
+                position: static;
+                margin: 1rem 0;
+                text-align: center;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-cta {
+                display: block;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+
+            .pricing-card {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.8rem;
+            }
+
+            nav {
+                gap: 0.8rem;
+                font-size: 0.75rem;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+
+            .price {
+                font-size: 2rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .what-you-get-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit-item {
+                padding: 1rem;
+            }
+        }
+
+        .chatbot-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            font-family: Arial, sans-serif;
+        }
+
+        .chatbot-trigger {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(201, 169, 97, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .chatbot-trigger:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 25px rgba(201, 169, 97, 0.6);
+        }
+
+        .chatbot-box {
+            position: absolute;
+            bottom: 75px;
+            right: 0;
+            width: 350px;
+            max-width: calc(100vw - 40px);
+            height: 480px;
+            background: #141311;
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-box.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px) scale(0.95);
+        }
+
+        .chatbot-header {
+            background: rgba(201, 169, 97, 0.15);
+            padding: 1rem;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            color: var(--gold);
+            font-size: 1rem;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .chatbot-close {
+            background: transparent;
+            border: none;
+            color: var(--cream);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .chat-msg {
+            max-width: 80%;
+            padding: 0.7rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .chat-msg.bot {
+            background: rgba(201, 169, 97, 0.1);
+            color: var(--cream);
+            align-self: flex-start;
+            border: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .chat-msg.user {
+            background: var(--gold);
+            color: var(--black);
+            align-self: flex-end;
+            font-weight: 500;
+        }
+
+        .chatbot-input-area {
+            padding: 0.8rem;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+            display: flex;
+            gap: 0.5rem;
+            background: #0F0E0C;
+        }
+
+        .chatbot-input-area input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: 4px;
+            padding: 0.6rem;
+            color: var(--cream);
+            outline: none;
+            font-size: 0.85rem;
+        }
+
+        .chatbot-input-area input:focus {
+            border-color: var(--gold);
+        }
+
+        .chatbot-input-area button {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">CRDH</div>
+        <nav>
+            <a href="#about">À propos</a>
+            <a href="#features">Avantages</a>
+            <a href="#what-you-get">Ce que tu reçois</a>
+            <a href="#preview">Aperçu</a>
+            <a href="#pricing">Prix</a>
+        </nav>
+    </header>
+
+    <!-- URGENCE BADGE -->
+    <div class="urgence-badge">
+        ⏰ Accès immédiat
+        <span>après l'achat</span>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div>
+                <p class="hero-subtitle">Essai Philosophique et Réflexif</p>
+                <h1 class="hero-title">Méditation sur la vie de l'homme et son langage</h1>
+            </div>
+            
+            <div class="hero-book">
+                <img src="couverture.png" alt="Couverture - Méditation sur la vie de l'homme et son langage" class="book-cover">
+            </div>
+
+            <div class="hero-text">
+                <p class="hero-description">Explorez une réflexion profonde sur l'existence humaine, les mécanismes du destin et le pouvoir transformateur du langage. Un essai philosophique qui combine rigueur académique et exploration spirituelle.</p>
+                
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="window.location.href='https://wa.me/2290196180403?text=Bonjour%20monsieur%20Folly%20Val%C3%A8re%20TOSSOU.%20J%27ai%20%C3%A9t%C3%A9%20emball%C3%A9%20par%20l%27extrait%20de%20votre%20ouvrage%20sur%20la%20page%20de%20vente%20et%20je%20voudrais%20passer%20un%20achat...';">Commander via WhatsApp</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('preview').scrollIntoView();">Lire l'aperçu</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
+        <h2 class="section-title">Pourquoi lire cet ouvrage</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🧠</span>
+                <h3>Profonde philosophie</h3>
+                <p>Un essai rigoureux explorant les questions existentielles fondamentales qui façonnent nos vies et nos destinées.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">✨</span>
+                <h3>Sagesse ésotérique</h3>
+                <p>Intégration harmonieuse de la pensée académique et de l'exploration spirituelle pour une vision holistique de l'existence.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">📖</span>
+                <h3>Ouvrage complet</h3>
+                <p>Méditations profondes et analyses qui transformeront votre compréhension de la vie et de votre place dans l'univers.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h3>Pour tous les lecteurs</h3>
+                <p>Conçu pour le grand public cultivé, les chercheurs ésotériques et les étudiants en philosophie.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">💭</span>
+                <h3>Langage et destin</h3>
+                <p>Comprendre comment nos paroles et nos pensées façonnent notre destinée et celle des autres.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🌟</span>
+                <h3>Transformateur</h3>
+                <p>Quittez ce livre changé, avec une compréhension plus profonde de vous-même et de votre essence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <h2 class="section-title">Ce que les lecteurs disent</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Cet ouvrage a complètement transformé ma compréhension de l'existence. Les méditations proposées offrent une clarté rare sur le rôle du langage dans notre destin."</p>
+                <p class="testimonial-author">— Amos K., Cotonou, Bénin</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Un essai intellectuellement rigoureux combiné avec une sagesse profonde. Parfait pour ceux qui cherchent du sens dans leurs actions et leurs paroles."</p>
+                <p class="testimonial-author">— Sophie M., Paris, France</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Je recommande vivement ce livre. Les concepts de Folly Valère Tossou sur le destin et le langage m'ont permis de repenser ma place dans l'univers."</p>
+                <p class="testimonial-author">— David M., Montréal, Canada</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET SECTION -->
+    <section class="what-you-get" id="what-you-get">
+        <h2 class="section-title">Ce que tu reçois</h2>
+        
+        <div class="what-you-get-content">
+            <p style="color: var(--light-gray); text-align: center; margin-bottom: 3rem; line-height: 1.7;">
+                Dès la confirmation de ton achat, tu accèdes immédiatement à ton ebook complet. Voici exactement ce qui est inclus :
+            </p>
+
+            <div class="what-you-get-grid">
+                <div class="benefit-item">
+                    <div class="benefit-checkmark">✓</div>
+                    <div class="benefit-text">
+                        <h4>PDF haute résolution</h4>
+                        <p>Qualité optimale pour lecture sur tous les appareils (tablette, téléphone, ordinateur)</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-checkmark">✓</div>
+                    <div class="benefit-text">
+                        <h4>Accès immédiat</h4>
+                        <p>Télécharge le fichier en quelques secondes après la confirmation</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-checkmark">✓</div>
+                    <div class="benefit-text">
+                        <h4>Lecture offline</h4>
+                        <p>Lisible sans connexion internet une fois téléchargé</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-checkmark">✓</div>
+                    <div class="benefit-text">
+                        <h4>Accès permanent</h4>
+                        <p>Lien de téléchargement actif à vie — réitérez quand vous le souhaitez</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-checkmark">✓</div>
+                    <div class="benefit-text">
+                        <h4>Ouvrage Intégral</h4>
+                        <p>100% du contenu philosophique et des méditations du prologue à la conclusion</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-checkmark">✓</div>
+                    <div class="benefit-text">
+                        <h4>Support email</h4>
+                        <p>Besoin d'aide ? Contacte-moi pour toute question sur l'ouvrage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq">
+        <h2 class="section-title">Questions fréquentes</h2>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Combien de temps pour lire cet ouvrage ?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">L'ouvrage complet compte 202 pages densément réfléchies. Comptez 20-30 heures de lecture attentive pour parcourir l'intégralité. Cependant, ce n'est pas un livre à "consommer" rapidement — c'est une méditation que vous pouvez relire et approfondir au fur et à mesure. Beaucoup de lecteurs le revisitent plusieurs fois.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Quel format reçois-je exactement ?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">Tu reçois un PDF haute résolution que tu peux télécharger immédiatement. Ce format est compatible avec tous les appareils (ordinateur, tablette, smartphone) et peut être lu avec n'importe quel lecteur PDF standard.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Est-ce adapté aux débutants en philosophie ?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">Oui ! Bien que l'ouvrage soit rigoureux, il est écrit de manière accessible. Folly Valère Tossou guide le lecteur progressivement, en expliquant les concepts fondamentaux avant d'explorer les idées plus complexes. C'est parfait pour les débutants comme pour les lecteurs expérimentés.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Puis-je partager le PDF avec d'autres ?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">Le PDF est personnel et destiné à votre usage privé. Le partage non autorisé viole les droits d'auteur. Si vos amis et famille sont intéressés, je vous encourage à partager le lien de cette page pour qu'ils puissent acquérir leur propre copie.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Comment puis-je vous contacter après l'achat ?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">Après votre achat via WhatsApp, je vous fournirai un email de confirmation avec les détails de téléchargement et mon adresse email de support (tossouprecieux29@gmail.com) pour toute question ou assistance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Y a-t-il une garantie de satisfaction ?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">Si tu n'es pas satisfait de l'ouvrage dans les 7 jours suivant l'achat, tu peux demander un remboursement complet. Aucune question posée. Je suis confiant que ce livre enrichira ta perspective sur l'existence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREVIEW SECTION -->
+    <section class="preview" id="preview">
+        <h2 class="section-title">Lire l'aperçu de l'ouvrage</h2>
+        <p class="preview-intro">
+            Plongez dans le prologue et découvrez le style et la profondeur de cette méditation philosophique. C'est un aperçu authentique de ce qui vous attend.
+        </p>
+        
+        <div class="preview-container">
+            <!-- Lecteur PDF intégré -->
+            <div class="pdf-viewer">
+                <embed src="Meditation_sur_la_vie_de_l_homme_et_son_langage_Valere_Tossou_2.pdf" type="application/pdf" width="100%" height="600px" />
+            </div>
+
+            <!-- Bouton de secours / téléchargement direct -->
+            <div style="text-align: center;">
+                <a href="Meditation_sur_la_vie_de_l_homme_et_son_langage_Valere_Tossou_2.pdf" target="_blank" class="btn btn-secondary">
+                    Ouvrir en plein écran / Télécharger
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Un voyage philosophique transformateur</h2>
+                <p>Depuis l'aube des temps, l'humanité se pose les mêmes questions fondamentales : Qui suis-je ? Pourquoi vis-je ce que je vis ? Comment naviguer les labyrinthes du destin ?</p>
+                <p>Cet essai offre des réponses profondément réfléchies, fondées sur des décennies de méditation, d'étude et d'investigation spirituelle.</p>
+                
+                <div class="about-quote">
+                    "Réfléchis pour savoir ! Fais des enquêtes pour découvrir que les évènements ne sont pas toujours ce qu'on nous enseigne qu'ils sont."
+                </div>
+
+                <p>À travers une exploration rigoureuse, l'auteur nous guide dans la compréhension des mécanismes invisibles qui gouvernent nos vies — le rôle du langage, l'influence de nos pensées, la nature du destin lui-même.</p>
+            </div>
+
+            <div class="about-image">
+                📚
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHOR SECTION -->
+    <section class="author">
+        <img src="valere_tossou.jpg" alt="Folly Valère Tossou" class="author-avatar">
+        <h3>Folly Valère Tossou</h3>
+        <p>Intellectuel engagé et chercheur fondateur du Centre de Recherche sur la Destinée Humaine (CRDH). Ses travaux combinent rigueur académique et exploration spirituelle pour offrir une perspective profonde sur les mystères de l'existence humaine.</p>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Investissez dans votre sagesse</h2>
+        
+        <div class="pricing-card">
+            <h3>L'ebook complet</h3>
+            <div class="price">
+                <span class="price-currency">F CFA</span>10000
+            </div>
+            <div class="price-period">Accès immédiat après l'achat via WhatsApp</div>
+            
+            <ul class="pricing-features">
+                <li>Ouvrage complet et intégral</li>
+                <li>Accès instantané après l'achat</li>
+                <li>Format PDF haute qualité</li>
+                <li>Disponible sur tous les appareils</li>
+                <li>Support par email</li>
+                <li>Accès illimité et permanent</li>
+                <li>Garantie satisfaction 7 jours</li>
+            </ul>
+
+            <button class="btn btn-primary" onclick="window.location.href='https://wa.me/2290196180403?text=Bonjour%20monsieur%20Folly%20Val%C3%A8re%20TOSSOU.%20J%27ai%20%C3%A9t%C3%A9%20emball%C3%A9%20par%20l%27extrait%20de%20votre%20ouvrage%20sur%20la%20page%20de%20vente%20et%20je%20voudrais%20passer%20un%20achat...';" style="margin-top: 2rem; width: 100%;">Commander via WhatsApp</button>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="cta-final">
+        <h2>Prêt à transformer votre compréhension de la vie ?</h2>
+        <p>Rejoignez les lecteurs qui explorent les mystères de l'existence et découvrez le pouvoir du langage dans votre destinée. Accès immédiat, 100% numérique, garantie satisfaction.</p>
+        <button class="btn btn-primary" onclick="window.location.href='https://wa.me/2290196180403?text=Bonjour%20monsieur%20Folly%20Val%C3%A8re%20TOSSOU.%20J%27ai%20%C3%A9t%C3%A9%20emball%C3%A9%20par%20l%27extrait%20de%20votre%20ouvrage%20sur%20la%20page%20de%20vente%20et%20je%20voudrais%20passer%20un%20achat...';">Commander maintenant via WhatsApp</button>
+    </section>
+
+    <!-- STICKY CTA BUTTON (Mobile) -->
+    <div class="sticky-cta">
+        <p style="margin-bottom: 0.5rem; font-size: 0.85rem;">€12,99 — Accès immédiat</p>
+        <button onclick="window.location.href='https://wa.me/2290196180403?text=Bonjour%20monsieur%20Folly%20Val%C3%A8re%20TOSSOU.%20J%27ai%20%C3%A9t%C3%A9%20emball%C3%A9%20par%20l%27extrait%20de%20votre%20ouvrage%20sur%20la%20page%20de%20vente%20et%20je%20voudrais%20passer%20un%20achat...';">Commander via WhatsApp</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 <strong>CRDH</strong> — Centre de Recherche sur la Destinée Humaine. Tous droits réservés.</p>
+        <p style="margin-top: 1rem;">
+            <a href="mentions-legales.html" target="_blank">Mentions légales</a> • 
+            <a href="politique-confidentialite.html" target="_blank">Politique de confidentialité</a> • 
+            <a href="https://wa.me/2290196180403" target="_blank">Contact WhatsApp</a>
+        </p>
+    </footer>
+
+    <script>
+        // Toggle FAQ answers
+        function toggleFAQ(element) {
+            const question = element;
+            const answer = question.nextElementSibling;
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(faq => {
+                if (faq !== answer) {
+                    faq.classList.remove('show');
+                    faq.previousElementSibling.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            question.classList.toggle('active');
+            answer.classList.toggle('show');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Fade in elements on scroll (for feature cards)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-on-scroll');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Handle mobile-specific behavior
+        function handleResponsive() {
+            if (window.innerWidth < 768) {
+                // Sticky CTA is already shown via CSS media query
+            }
+        }
+
+        window.addEventListener('resize', handleResponsive);
+        handleResponsive();
+    </script>
+
+    <div id="chat-widget">
+        <button id="chat-toggle" onclick="toggleChat()">
+            💬 <span>Posez une question à l'IA</span>
+        </button>
+
+        <div id="chat-box" class="chat-hidden">
+            <div class="chat-header">
+                <h3>Assistant CRDH</h3>
+                <button onclick="toggleChat()" class="chat-close">&times;</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-msg bot-msg">
+                    Bonjour cher ami ! Je suis de Folly Valère Tossou. Avez-vous une question sur l'essai <i>« Méditation sur la vie de l'homme et son langage »</i> ? (Disponible au tarif de 10.000 F CFA).
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Écrivez votre question..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">➔</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JS externe -->
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
