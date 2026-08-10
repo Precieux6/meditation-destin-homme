@@ -1031,6 +1031,7 @@
         }
         
     </style>
+    <link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body>
 
@@ -1355,7 +1356,7 @@
 
     <!-- STICKY CTA BUTTON (Mobile) -->
     <div class="sticky-cta">
-        <p style="margin-bottom: 0.5rem; font-size: 0.85rem;">€12,99 — Accès immédiat</p>
+        <p style="margin-bottom: 0.5rem; font-size: 0.85rem;">10.000 F CFA — Accès immédiat</p>
         <button onclick="window.location.href='https://wa.me/2290196180403?text=Bonjour%20monsieur%20Folly%20Val%C3%A8re%20TOSSOU.%20J%27ai%20%C3%A9t%C3%A9%20emball%C3%A9%20par%20l%27extrait%20de%20votre%20ouvrage%20sur%20la%20page%20de%20vente%20et%20je%20voudrais%20passer%20un%20achat...';">Commander via WhatsApp</button>
     </div>
 
@@ -1432,27 +1433,29 @@
         handleResponsive();
     </script>
 
-    <div id="chat-widget">
-        <button id="chat-toggle" onclick="toggleChat()">
-            💬 <span>Posez une question à l'IA</span>
-        </button>
-
-        <div id="chat-box" class="chat-hidden">
-            <div class="chat-header">
-                <h3>Assistant CRDH</h3>
-                <button onclick="toggleChat()" class="chat-close">&times;</button>
-            </div>
-            <div class="chat-messages" id="chat-messages">
-                <div class="chat-msg bot-msg">
-                    Bonjour cher ami ! Je suis de Folly Valère Tossou. Avez-vous une question sur l'essai <i>« Méditation sur la vie de l'homme et son langage »</i> ? (Disponible au tarif de 10.000 F CFA).
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" id="chat-input" placeholder="Écrivez votre question..." onkeypress="handleKeyPress(event)">
-                <button onclick="sendMessage()">➔</button>
+    <div id="chat-widget-container">
+    <!-- Fenêtre de dialogue -->
+    <div id="chat-box" class="chat-box chat-hidden">
+        <div class="chat-header">
+            <h3>Assistant CRDH</h3>
+            <button class="chat-close-btn" id="chat-close-btn">&times;</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-msg bot-msg">
+                Bonjour cher ami ! Je suis l'assistant de Folly Valère Tossou. Avez-vous une question sur l'essai <i>« Méditation sur la vie de l'homme et son langage »</i> ?
             </div>
         </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Écrivez votre question..." />
+            <button id="chat-send-btn">&rarr;</button>
+        </div>
     </div>
+
+    <!-- Bouton Flottant -->
+    <button id="chat-toggle-btn" class="chat-toggle-btn">
+        💬 Posez une question à l'IA
+    </button>
+</div>
 
     <!-- Script JS externe -->
     <script src="js/chatbot.js"></script>
