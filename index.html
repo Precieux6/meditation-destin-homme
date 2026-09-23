@@ -896,15 +896,24 @@
 
     <!-- HEADER -->
     <header>
-        <div class="logo">CRDH</div>
-        <nav>
-            <a href="#about">À propos</a>
-            <a href="#features">Avantages</a>
-            <a href="#what-you-get">Ce que tu reçois</a>
-            <a href="#preview">Aperçu</a>
-            <a href="#pricing">Prix</a>
-        </nav>
-    </header>
+    <div class="logo">CRDH</div>
+    
+    <!-- Bouton hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Navigation -->
+    <nav class="nav-links" id="nav-links">
+        <a href="#about">À propos</a>
+        <a href="#features">Avantages</a>
+        <a href="#what-you-get">Ce que tu reçois</a>
+        <a href="#preview">Aperçu</a>
+        <a href="#pricing">Prix</a>
+    </nav>
+</header>
 
     <!-- URGENCE BADGE -->
     <div class="urgence-badge">
@@ -1291,6 +1300,37 @@
         window.addEventListener('resize', handleResponsive);
         handleResponsive();
     </script>
+    <!-- Overlay pour fermer le menu en cliquant à l'extérieur -->
+<div class="overlay" id="overlay"></div>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const overlay = document.getElementById('overlay');
+    
+    // Ouvrir/fermer le menu
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+    
+    // Fermer le menu en cliquant sur l'overlay
+    overlay.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+    
+    // Fermer le menu en cliquant sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    });
+</script>
 
 </body>
 </html>
