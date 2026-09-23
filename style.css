@@ -345,3 +345,36 @@ li {
         padding: 20px 40px;
     }
 }
+
+/* Centrage du footer et de tous ses éléments */
+footer {
+    text-align: center;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.developer-credit {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(212, 165, 116, 0.3);
+}
+
+.developer-credit a {
+    color: var(--accent-gold, #d4a574);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.developer-credit a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
